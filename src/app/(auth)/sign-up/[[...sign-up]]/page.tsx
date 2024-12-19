@@ -8,7 +8,15 @@ export default function Page() {
         <section className="bg-white" >
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+                    <Image
+                        alt="
+                        A person holding a phone with a Squid app open on the screen."
+                        src={background_image}
+                        className="absolute inset-0 h-full w-full object-cover opacity-80"
+                        width={870}
+                        height={580}
 
+                    />
 
                     <div className="hidden lg:relative lg:block lg:p-12">
                         <a className="block text-white" href="#">
