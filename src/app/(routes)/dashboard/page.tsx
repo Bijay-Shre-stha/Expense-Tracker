@@ -1,10 +1,10 @@
 import React from 'react'
-import Header from '../_components/Header'
+// import Header from '../../_components/Header'
 
 const Dashboard = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <div>
                 This is Dashboard page
             </div>
