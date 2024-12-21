@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import SideNavbar from './_components/SideNavbar';
+import DashboardHeader from './_components/DashboardHeader';
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
     return (
@@ -9,9 +10,8 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
                 md:ml-64
                 bg-gray-200
                 min-h-screen
-                p-5
-                md:p-10
             ">
+                <DashboardHeader />
                 {children}
             </div>
         </>
