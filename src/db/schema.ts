@@ -1,0 +1,11 @@
+import {  pgTable, serial, varchar } from "drizzle-orm/pg-core";
+
+export const Budgets = pgTable('budgets', {
+    id:serial('id').primaryKey(),
+    name:varchar('name').notNull(),
+    amount:varchar('amount').notNull(),
+    icon:varchar('icon'),
+    createdBy: varchar('created_by').notNull(),
+    createdAt: varchar('created_at').notNull(),
+    updatedAt: varchar('updated_at').notNull()
+})
