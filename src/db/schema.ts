@@ -8,3 +8,5 @@ export const Budgets = pgTable('budgets', {
     createdBy: varchar('created_by').notNull(),
     createdAt: timestamp('created_at').notNull().defaultNow(),
 })
+
+export type Budget = typeof  Budgets.$inferInsert;
