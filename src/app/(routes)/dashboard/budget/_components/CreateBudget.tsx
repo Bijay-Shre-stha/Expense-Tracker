@@ -8,6 +8,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
 import EmojiPicker from "emoji-picker-react"
 import { useState } from "react"
 
@@ -33,24 +34,33 @@ const CreateBudget = () => {
                                 <div className="mt-5">
                                     <Button variant={"outline"}
                                         className="text-lg"
-                                    onClick={() => setOpenEmojiPicker(!openEmojiPicker)}
+                                        onClick={() => setOpenEmojiPicker(!openEmojiPicker)}
                                     >{emojiIcon}</Button>
-                                <div className="mt-3 absolute">
-                                    <EmojiPicker
-                                        open={openEmojiPicker}
-                                        onEmojiClick={(emojiObject) => {
-                                            setEmojiIcon(emojiObject.emoji)
-                                            setOpenEmojiPicker(false)
-                                        }}
-                                    />
+                                    <div className="mt-3 absolute">
+                                        <EmojiPicker
+                                            open={openEmojiPicker}
+                                            onEmojiClick={(emojiObject) => {
+                                                setEmojiIcon(emojiObject.emoji)
+                                                setOpenEmojiPicker(false)
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="mt-3">
+                                        <h2 className="text-black font-medium my-2">Budge Name</h2>
+                                        <Input placeholder="Example: Home, Finance" />
+                                    </div>
+                                    <div className="mt-3">
+                                        <h2 className="text-black font-medium my-2">Budget Amount</h2>
+                                        <Input placeholder="Example: Rs.1000" />
+                                    </div>
+                                    <Button className="mt-5 w-full">Create Budget</Button>
                                 </div>
-                            </div>
-                        </DialogDescription>
-                    </DialogHeader>
-                </DialogContent>
-            </Dialog>
+                            </DialogDescription>
+                        </DialogHeader>
+                    </DialogContent>
+                </Dialog>
 
-        </div >
+            </div >
         </>
     )
 }
