@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter as InterFont } from 'next/font/google'
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = InterFont({
   subsets: ['latin']
@@ -24,6 +25,7 @@ export default function RootLayout({
           className={`${inter.className} antialiased`}
         >
           {children}
+          <Toaster/>
         </body>
       </html>
     </ClerkProvider>
