@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { UserButton } from '@clerk/nextjs';
 import { LayoutGrid, PiggyBank, ReceiptText, ShieldCheck } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import  Link  from 'next/link';
+import Link from 'next/link';
 function SideNav() {
-    const menuList= [
+    const menuList = [
         {
             key: 1,
             name: 'Dashboard',
@@ -29,16 +29,16 @@ function SideNav() {
     ];
 
     const path = usePathname();
-    
+
     useEffect(() => {
-        console.log(path);
+        // console.log(path);
     }, [path]);
 
     return (
         <div className='h-screen p-5 border shadow-md'>
             <div className='flex items-center text-primary font-bold'>
                 <Image src='/logo.svg' alt='logo' width={100} height={100} />
-                <h1>Bixpense</h1>
+                <h1>SpendWise</h1>
             </div>
             <div className='mt-5'>
                 {menuList.map((menu) => (

@@ -10,7 +10,7 @@ function DashboardHeader() {
   const pathname = usePathname();
   const isDashboard = pathname === '/dashboard';
 
-  console.log(router?.pathname);
+  // console.log(router?.pathname);
   const gotoDash = () => {
     router.push('/dashboard');
   };

@@ -52,7 +52,7 @@ function Expenses({params}) {
           description: "Success!",
         })
         route.replace('/dashboard/budgets');
-        console.log(result);
+        // console.log(result);
       }
     }
     
