@@ -25,7 +25,7 @@ function Dashlayout({children}) {
   }
   return (
     <>
-    <div className='fixed md:w-64 hidden md:block'>
+    <div className='fixed md:w-64 z-50 md:block'>
         <SideNav/>
     </div>
 
