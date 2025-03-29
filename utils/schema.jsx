@@ -16,3 +16,10 @@ export const Transactions=pgTable('transactions',{
     budgetId:integer('budgetId').references(()=>Budgets.id),
     createdAt:varchar('createdAt').notNull()
 });
+
+export const Savings=pgTable('savings',{
+    id:serial('id').primaryKey(),
+    amount:numeric('amount').notNull().default(0),
+    name:varchar('name').notNull(),
+    createdAt:varchar('createdAt').notNull()
+});
