@@ -70,7 +70,7 @@ function Page() {
           <h2 className='font-bold text-lg'>Latest Transactions</h2>
           <TransactionList transactionList={listofTransactions} refreshData={() => getBudgets()} />
         </div>
-        <div className='grid gap-5'>
+        <div className='flex flex-col space-y-5'>
           <h2 className='font-bold text-lg'>Latest Budgets</h2>
           {budgetList.map((budget, index) => (
             <BudgetItem budget={budget} key={index} />
