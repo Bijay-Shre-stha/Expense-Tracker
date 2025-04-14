@@ -23,3 +23,10 @@ export const Savings=pgTable('savings',{
     name:varchar('name').notNull(),
     createdAt:varchar('createdAt').notNull()
 });
+
+export const ExtraExpense=pgTable('extra_expense',{
+    id:serial('id').primaryKey(),
+    amount:numeric('amount').notNull().default(0),
+    name:varchar('name').notNull(),
+    createdAt:varchar('createdAt').notNull()
+});
