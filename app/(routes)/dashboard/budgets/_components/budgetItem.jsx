@@ -1,53 +1,54 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
-function budgetItem({ budget }) {
-  // Get progress 
+function BudgetItem({ budget }) {
   const calculateProgress = () => {
     const perc = (budget.totalSpend / budget.amount) * 100;
     return Math.min(100, Math.max(0, perc.toFixed(2)));
-  }
+  };
+
+  const remaining = budget.amount - (budget.totalSpend || 0);
+  const exceeded = remaining < 0;
 
   return (
-    <Link href={"/dashboard/transactions/" + budget?.id} >
-      <div className='p-5 border rounded-lg hover:shadow-md cursor-pointer h-[150px]'>
-        <div className='flex gap-2 items-center justify-between'>
-          <div className='flex gap-2 items-center'>
-            <h2 className='text-3xl p-3 px-4 bg-slate-100 rounded-full'>
+    <Link href={`/dashboard/transactions/${budget?.id}`}>
+      <div className="p-5 border rounded-2xl shadow-sm hover:shadow-lg transition duration-300 ease-in-out cursor-pointer bg-white h-auto">
+        <div className="flex flex-col sm:flex-row justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="text-3xl p-3 px-4 bg-slate-100 rounded-full">
               {budget?.icon}
-            </h2>
+            </div>
             <div>
-              <h2 className='font-bold '>
-                {budget?.name}
-              </h2>
-              <h2 className='text-sm text-gray-500'>
-                {budget?.totalItem} Item
-              </h2>
+              <h2 className="font-bold text-lg sm:text-xl">{budget?.name}</h2>
+              <p className="text-sm text-gray-500">{budget?.totalItem} Item</p>
             </div>
           </div>
-          <h2 className='font-bold text-primary text-lg'>
-            NRP.{budget?.amount}
-          </h2>
+
+          <div className="text-right">
+            <h2 className="font-semibold text-lg text-primary">NRP. {budget?.amount}</h2>
+          </div>
         </div>
-        <div className='mt-5'>
-          <div className='flex items-center justify-between'>
-            <h2 className='text-xs text-slate-400'>
-              NRP.{budget?.totalSpend ? budget?.totalSpend : 0} Spent
-            </h2>
-            <h2 className={`text-xs ${budget?.amount - budget?.totalSpend >= 0 ? 'text-slate-400' : 'text-red-600'}`}>
-              {budget?.amount - budget?.totalSpend >= 0
-                ? `NRP.${budget?.amount - budget?.totalSpend} Remaining`
-                : `Exceeded budget by NRP.${Math.abs(budget?.amount - budget?.totalSpend)}`}
-            </h2>
+
+        <div className="mt-4 space-y-1">
+          <div className="flex justify-between text-xs sm:text-sm text-gray-500">
+            <p>NRP. {budget?.totalSpend || 0} Spent</p>
+            <p className={`${exceeded ? 'text-red-600 font-semibold' : 'text-gray-600'}`}>
+              {exceeded
+                ? `Exceeded by NRP. ${Math.abs(remaining)}`
+                : `NRP. ${remaining} Remaining`}
+            </p>
           </div>
-          <div className='w-full bg-slate-300 h-2 rounded-full'>
-            <div className='bg-primary h-2 rounded-full' style={{ width: `${calculateProgress()}%` }}>
-            </div>
+
+          <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+            <div
+              className="bg-primary h-2 rounded-full transition-all duration-300 ease-in-out"
+              style={{ width: `${calculateProgress()}%` }}
+            ></div>
           </div>
         </div>
       </div>
     </Link>
-  )
+  );
 }
 
-export default budgetItem
+export default BudgetItem;
