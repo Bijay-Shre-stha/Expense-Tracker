@@ -21,12 +21,14 @@ export const Savings=pgTable('savings',{
     id:serial('id').primaryKey(),
     amount:numeric('amount').notNull().default(0),
     name:varchar('name').notNull(),
-    createdAt:varchar('createdAt').notNull()
+    createdAt:varchar('createdAt').notNull(),
+    createdBy: varchar('createdBy').notNull(),
 });
 
 export const ExtraExpense=pgTable('extra_expense',{
     id:serial('id').primaryKey(),
     amount:numeric('amount').notNull().default(0),
     name:varchar('name').notNull(),
-    createdAt:varchar('createdAt').notNull()
+    createdAt:varchar('createdAt').notNull(),
+    createdBy: varchar('createdBy').notNull(),
 });
