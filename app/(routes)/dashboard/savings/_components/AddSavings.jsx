@@ -7,6 +7,7 @@ import { Savings } from "@/utils/schema";
 import { Loader } from "lucide-react";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 import {
     BarChart,
     Bar,
@@ -18,8 +19,11 @@ import {
     LineChart,
     Line,
 } from "recharts";
+import { eq } from "drizzle-orm";
 
 function AddSavings() {
+    const { user } = useUser();
+    const userId = user?.primaryEmailAddress?.emailAddress;
     const [name, setName] = useState("");
     const [amount, setAmount] = useState("");
     const [loading, setLoading] = useState(false);
@@ -27,9 +31,14 @@ function AddSavings() {
     const [monthlySavings, setMonthlySavings] = useState([]);
 
     const refreshData = async () => {
-        const savingsList = await db.select().from(Savings);
+        if (!userId) return;
+    
+        const savingsList = await db
+            .select()
+            .from(Savings)
+            .where(eq(Savings.createdBy, userId));
         setSavings(savingsList);
-        groupSavingsByMonth(savingsList);  // Group savings by month
+        groupSavingsByMonth(savingsList);
     };
 
     const groupSavingsByMonth = (savingsList) => {
@@ -54,6 +63,8 @@ function AddSavings() {
 
     // Add new savings entry
     const addNewSaving = async () => {
+        if (!userId) return;
+
         setLoading(true);
         const result = await db
             .insert(Savings)
@@ -61,22 +72,23 @@ function AddSavings() {
                 name,
                 amount,
                 createdAt: moment().format("DD/MM/YYYY"),
+                createdBy: userId,
             })
             .returning({ insertedId: Savings.id });
 
         setAmount("");
         setName("");
+        setLoading(false);
 
         if (result) {
-            setLoading(false);
             refreshData();
             toast({
                 title: "Saving Added",
                 description: "Your savings have been recorded successfully!",
             });
         }
-        setLoading(false);
     };
+
 
     return (
         <div className="border p-5 rounded-lg">
