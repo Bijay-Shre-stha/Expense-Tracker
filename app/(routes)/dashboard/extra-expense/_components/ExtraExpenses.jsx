@@ -18,8 +18,12 @@ import {
     LineChart,
     Line,
 } from "recharts";
+import { eq } from "drizzle-orm";
+import { useUser } from "@clerk/nextjs";
 
 const AddExtraExpense = () => {
+    const { user } = useUser();
+    const userId = user?.primaryEmailAddress?.emailAddress;
     const [name, setName] = useState("");
     const [amount, setAmount] = useState("");
     const [loading, setLoading] = useState(false);
@@ -27,7 +31,13 @@ const AddExtraExpense = () => {
     const [monthlyExpenses, setMonthlyExpenses] = useState([]);
 
     const refreshData = async () => {
-        const expenseList = await db.select().from(ExtraExpense);
+        if (!userId) return;
+
+        const expenseList = await db
+            .select()
+            .from(ExtraExpense)
+            .where(eq(ExtraExpense.createdBy,userId))
+            ;
         setExpenses(expenseList);
         groupExpensesByMonth(expenseList);
     };
