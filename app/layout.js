@@ -8,7 +8,29 @@ import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: "Expenses Tracker",
-  description: "Track your expenses with ease",
+  description: "Track your expenses with ease and manage your budget smartly.",
+  keywords: ["expenses", "tracker", "budget", "money management", "personal finance"],
+  authors: [{ name: "Bijay Shrestha" }],
+  openGraph: {
+    title: "Expenses Tracker",
+    description: "Track your expenses with ease and manage your budget smartly.",
+    url: "https://expense-tracker-bijay0817.vercel.app",
+    siteName: "Expenses Tracker",
+    images: [
+      {
+        url: "https://expense-tracker-bijay0817.vercel.app/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "Expenses Tracker App",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
