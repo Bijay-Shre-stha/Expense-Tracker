@@ -14,8 +14,8 @@ function SideNav() {
     const menuList = [
         { key: 1, name: "Dashboard", icon: LayoutGrid, path: "/dashboard" },
         { key: 2, name: "Budgets", icon: PiggyBank, path: "/dashboard/budgets" },
-        { key: 3, name: "Transactions", icon: ReceiptText, path: "/dashboard/transactions" },
-        { key: 4, name: 'Daily Transactions', icon: DollarSign, path: '/dashboard/daily-transactions' },
+        { key: 3, name: 'Daily Transactions', icon: DollarSign, path: '/dashboard/daily-transactions' },
+        { key: 4, name: "Transactions", icon: ReceiptText, path: "/dashboard/transactions" },
         { key: 5, name: "Savings", icon: Wallet2Icon, path: "/dashboard/savings" },
         { key: 6, name: "Extra Expense", icon: Banknote , path: "/dashboard/extra-expense" },
 
