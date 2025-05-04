@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://expense-tracker-bijay0817.vercel.app
+
+# Sitemaps
+Sitemap: https://expense-tracker-bijay0817.vercel.app/sitemap.xml
