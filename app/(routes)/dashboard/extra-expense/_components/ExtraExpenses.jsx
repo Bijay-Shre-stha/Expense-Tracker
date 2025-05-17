@@ -37,6 +37,7 @@ const AddExtraExpense = () => {
             .select()
             .from(ExtraExpense)
             .where(eq(ExtraExpense.createdBy,userId))
+            .orderBy(ExtraExpense.createdAt, "desc")
             ;
         setExpenses(expenseList);
         groupExpensesByMonth(expenseList);
@@ -68,6 +69,7 @@ const AddExtraExpense = () => {
                 name,
                 amount,
                 createdAt: moment().format("DD/MM/YYYY"),
+                createdBy: userId,
             })
             .returning({ insertedId: ExtraExpense.id });
 
