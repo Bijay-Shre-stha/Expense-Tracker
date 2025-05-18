@@ -36,7 +36,9 @@ function AddSavings() {
         const savingsList = await db
             .select()
             .from(Savings)
-            .where(eq(Savings.createdBy, userId));
+            .where(eq(Savings.createdBy, userId))
+            .orderBy(Savings.createdAt, "desc")
+            ;
         setSavings(savingsList);
         groupSavingsByMonth(savingsList);
     };
