@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
-import { LayoutGrid, PiggyBank, ReceiptText, DollarSign, Menu, Wallet2Icon, Banknote } from "lucide-react";
+import { LayoutGrid, PiggyBank, ReceiptText, DollarSign, Menu, Wallet2Icon, Banknote, Share, CandlestickChart } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -17,7 +17,8 @@ function SideNav() {
         { key: 3, name: 'Daily Transactions', icon: DollarSign, path: '/dashboard/daily-transactions' },
         { key: 4, name: "Savings", icon: Wallet2Icon, path: "/dashboard/savings" },
         { key: 5, name: "Extra Expense", icon: Banknote , path: "/dashboard/extra-expense" },
-        { key: 6, name: "Transactions", icon: ReceiptText, path: "/dashboard/transactions" },
+        { key: 6, name: "Investment", icon: CandlestickChart, path: "/dashboard/share-and-investment" },
+        { key: 7, name: "Transactions", icon: ReceiptText, path: "/dashboard/transactions" },
     ];
 
     // Toggle menu state
