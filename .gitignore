@@ -34,3 +34,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# yarn lock file
+yarn.lock
+
+# pnpm lock file
+pnpm-lock.yaml
+
+# bun lock file
+bun.lockb
+
+# IDEs
+.idea
+
+# macOS
+*.DS_Store
+
