@@ -32,3 +32,11 @@ export const ExtraExpense=pgTable('extra_expense',{
     createdAt:varchar('createdAt').notNull(),
     createdBy: varchar('createdBy').notNull(),
 });
+
+export const ShareAndInvest=pgTable('share_and_invest',{
+    id:serial('id').primaryKey(),
+    amount:numeric('amount').notNull().default(0),
+    name:varchar('name').notNull(),
+    createdAt:varchar('createdAt').notNull(),
+    createdBy: varchar('createdBy').notNull(),
+});
