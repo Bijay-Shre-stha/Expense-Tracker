@@ -98,9 +98,12 @@ Before you begin, ensure you have the following installed:
    Update the `.env.local` file with your configuration:
 
    ```env
-   DATABASE_URL="your-database-url"
-   NEXTAUTH_SECRET="your-secret-key"
-   NEXTAUTH_URL="http://localhost:3000"
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = ""
+      CLERK_SECRET_KEY = ""
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL = "/sign-in"
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL = "/sign-up"
+      NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL = "/dashboard"
+      DATABASE_URL = "postgresql://neondb_owner:
    ```
 
 4. **Set up the database**

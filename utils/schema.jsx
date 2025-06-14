@@ -1,4 +1,4 @@
-import { integer, numeric, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { integer, numeric, pgTable, serial, varchar,boolean } from "drizzle-orm/pg-core";
 
 export const Budgets=pgTable('budgets',{
 
@@ -39,4 +39,5 @@ export const ShareAndInvest=pgTable('share_and_invest',{
     name:varchar('name').notNull(),
     createdAt:varchar('createdAt').notNull(),
     createdBy: varchar('createdBy').notNull(),
+    allocated: boolean('allocated').default(false),
 });
