@@ -1,0 +1,97 @@
+---
+name: Bug Report
+about: Create a report to help us improve Expense Tracker
+title: '[BUG] '
+labels: 'bug, help wanted, hacktoberfest'
+assignees: []
+
+sections:
+  - id: description
+    type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Report
+        ### 📋 Description
+        A clear and concise description of what the bug is.
+
+  - id: steps_to_reproduce
+    type: markdown
+    attributes:
+      value: |
+        ### 🔄 Steps to Reproduce
+        Steps to reproduce the behavior:
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+
+  - id: expected_behavior
+    type: markdown
+    attributes:
+      value: |
+        ### ✅ Expected Behavior
+        A clear and concise description of what you expected to happen.
+
+  - id: actual_behavior
+    type: markdown
+    attributes:
+      value: |
+        ### ❌ Actual Behavior
+        A clear and concise description of what actually happened.
+
+  - id: screenshots
+    type: markdown
+    attributes:
+      value: |
+        ### 📱 Screenshots
+        If applicable, add screenshots to help explain your problem.
+
+  - id: environment
+    type: markdown
+    attributes:
+      value: |
+        ### 🖥️ Environment
+        **Desktop:**
+        - OS: [e.g. Windows 10, macOS Big Sur, Ubuntu 20.04]
+        - Browser: [e.g. Chrome 95, Firefox 94, Safari 15]
+        - Version: [e.g. 95.0.4638.69]
+
+        **Mobile:**
+        - Device: [e.g. iPhone 13, Samsung Galaxy S21]
+        - OS: [e.g. iOS 15.1, Android 11]
+        - Browser: [e.g. Safari, Chrome Mobile]
+
+        **Application:**
+        - Node.js version: [e.g. 16.14.0]
+        - npm version: [e.g. 8.3.1]
+        - Database: [e.g. MongoDB 5.0]
+
+  - id: additional_context
+    type: markdown
+    attributes:
+      value: |
+        ### 🔧 Additional Context
+        Add any other context about the problem here.
+
+  - id: error_logs
+    type: markdown
+    attributes:
+      value: |
+        ### 📊 Error Logs
+        ```
+        Paste any relevant error logs here
+        ```
+
+  - id: possible_solution
+    type: markdown
+    attributes:
+      value: |
+        ### 💡 Possible Solution
+        If you have ideas on how to fix this bug, please describe them here.
+
+  - id: thanks
+    type: markdown
+    attributes:
+      value: |
+        ---
+        **Thank you for helping improve Expense Tracker! 🚀**
