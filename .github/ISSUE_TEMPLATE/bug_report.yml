@@ -1,97 +1,73 @@
----
 name: Bug Report
-about: Create a report to help us improve Expense Tracker
 title: '[BUG] '
-labels: 'bug, help wanted, hacktoberfest'
+labels: bug, help wanted, hacktoberfest
 assignees: []
 
-sections:
-  - id: description
-    type: markdown
+body:
+  - type: markdown
     attributes:
       value: |
         ## 🐛 Bug Report
-        ### 📋 Description
-        A clear and concise description of what the bug is.
 
-  - id: steps_to_reproduce
-    type: markdown
+  - type: textarea
+    id: description
     attributes:
-      value: |
-        ### 🔄 Steps to Reproduce
-        Steps to reproduce the behavior:
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+      label: 📋 Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the bug here...
 
-  - id: expected_behavior
-    type: markdown
+  - type: textarea
+    id: steps_to_reproduce
     attributes:
-      value: |
-        ### ✅ Expected Behavior
-        A clear and concise description of what you expected to happen.
+      label: 🔄 Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: 1. Go to '...'\n2. Click on '...'\n3. Scroll down to '...'\n4. See error
 
-  - id: actual_behavior
-    type: markdown
+  - type: textarea
+    id: expected_behavior
     attributes:
-      value: |
-        ### ❌ Actual Behavior
-        A clear and concise description of what actually happened.
+      label: ✅ Expected Behavior
+      description: What you expected to happen.
+      placeholder: Describe the expected behavior...
 
-  - id: screenshots
-    type: markdown
+  - type: textarea
+    id: actual_behavior
     attributes:
-      value: |
-        ### 📱 Screenshots
-        If applicable, add screenshots to help explain your problem.
+      label: ❌ Actual Behavior
+      description: What actually happened.
+      placeholder: Describe the actual behavior...
 
-  - id: environment
-    type: markdown
+  - type: input
+    id: screenshots
     attributes:
-      value: |
-        ### 🖥️ Environment
-        **Desktop:**
-        - OS: [e.g. Windows 10, macOS Big Sur, Ubuntu 20.04]
-        - Browser: [e.g. Chrome 95, Firefox 94, Safari 15]
-        - Version: [e.g. 95.0.4638.69]
+      label: 📱 Screenshots
+      description: URL or path to screenshots if applicable.
+      placeholder: https://example.com/screenshot.png
 
-        **Mobile:**
-        - Device: [e.g. iPhone 13, Samsung Galaxy S21]
-        - OS: [e.g. iOS 15.1, Android 11]
-        - Browser: [e.g. Safari, Chrome Mobile]
-
-        **Application:**
-        - Node.js version: [e.g. 16.14.0]
-        - npm version: [e.g. 8.3.1]
-        - Database: [e.g. MongoDB 5.0]
-
-  - id: additional_context
-    type: markdown
+  - type: textarea
+    id: environment
     attributes:
-      value: |
-        ### 🔧 Additional Context
-        Add any other context about the problem here.
+      label: 🖥️ Environment
+      description: Desktop, mobile, or application environment details.
+      placeholder: OS, Browser, Node.js version, Database, etc.
 
-  - id: error_logs
-    type: markdown
+  - type: textarea
+    id: additional_context
     attributes:
-      value: |
-        ### 📊 Error Logs
-        ```
-        Paste any relevant error logs here
-        ```
+      label: 🔧 Additional Context
+      description: Any other context about the problem.
+      placeholder: Additional information...
 
-  - id: possible_solution
-    type: markdown
+  - type: textarea
+    id: error_logs
     attributes:
-      value: |
-        ### 💡 Possible Solution
-        If you have ideas on how to fix this bug, please describe them here.
+      label: 📊 Error Logs
+      description: Paste any relevant error logs here.
+      placeholder: Paste logs here...
 
-  - id: thanks
-    type: markdown
+  - type: textarea
+    id: possible_solution
     attributes:
-      value: |
-        ---
-        **Thank you for helping improve Expense Tracker! 🚀**
+      label: 💡 Possible Solution
+      description: If you have ideas on how to fix this bug.
+      placeholder: Describe possible solution here...
