@@ -1,9 +1,10 @@
 ---
 name: Bug Report
-description: Report a bug to help us improve the project. Please include steps to reproduce and any relevant logs or screenshots.
-title: "[BUG] "
-labels: [bug, help wanted, hacktoberfest]
-assignees: []
+about: Create a report to help us improve Expense Tracker
+title: '[BUG] '
+labels: 'bug, help wanted, hacktoberfest'
+assignees: ''
+
 ---
 
 ## 🐛 Bug Report
