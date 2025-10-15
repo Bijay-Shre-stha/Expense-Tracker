@@ -35,10 +35,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-
     <ClerkProvider>
-      <html lang='en'>
-        <body className={ubuntu.className}><Toaster />
+      <html lang="en">
+        <head>
+          <meta
+            name="google-site-verification"
+            content="FRmXpdDZyE3fmx5BYctneKCx0JIhhTQagn_gSvDCZbQ"
+          />
+        </head>
+        <body className={ubuntu.className}>
+          <Toaster />
           {children}
           <SpeedInsights />
           <Analytics />
